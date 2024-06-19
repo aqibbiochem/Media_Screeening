@@ -94,10 +94,10 @@ def run(protocol: protocol_api.ProtocolContext):
     p1000 = protocol.load_instrument('p1000_single_gen2', 'right', tip_racks=[p1000_tiprack])
     
     for p in taget_plates:
-        #add water
-        #p1000.distribute(volume = 190*scale,
-        #                 source = water.wells()[0],
-        #                 dest = [plates[p].wells_by_name()[well_name] for well_name in list(set(protocol_template['well'].tolist()))])
+        add water
+        p1000.distribute(volume = 190*scale,
+                         source = water.wells()[0],
+                         dest = [plates[p].wells_by_name()[well_name] for well_name in list(set(protocol_template['well'].tolist()))])
         #add components, changing tips between components
         for c in component_names:
             component_indices=protocol_template.index[(protocol_template.ot2_label==c) & (protocol_template.plate==p)].tolist()
